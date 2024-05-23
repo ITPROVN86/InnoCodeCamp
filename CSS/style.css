@@ -143,3 +143,22 @@ body {
     opacity: 1;
     transform: translateY(0);
 }
+
+.button-gradient {
+    background: linear-gradient(to right, #ff758c, #c850c0);
+    text-decoration: none;
+    border: none;
+    color: white;
+    font-weight: bold;
+    padding: 20px 20px;
+    font-size: 19px;
+    cursor: pointer;
+    border-radius: 5px;
+    text-align: center;
+    transition: background 0.5s ease;
+
+    /* Style cho hiệu ứng hover */
+    &:hover {
+        background: linear-gradient(to right, #c850c0, #ff758c);
+    }
+}
