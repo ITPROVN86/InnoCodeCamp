@@ -3,7 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Trang chủ</title>
+    <title>Trang chủ - Cuộc thi InnoCode Camp 2024</title>
+    <meta
+      property="og:description"
+      content="InnoCode Camp 2024 is not just a competition; it's a journey to push the
+    boundaries of your programming skills"
+    />
+    <meta property="og:image" content="./Images/innocode.jpg" />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -12,11 +18,7 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
     />
-    <link
-    rel="stylesheet"
-    href="./CSS/style.css"
-  />
-    
+    <link rel="stylesheet" href="./CSS/style.css" />
   </head>
   <body>
     <header class="hero">
@@ -36,9 +38,24 @@
         Office at FPT University Danang, this is the perfect arena to shine on
         the tech map!
       </p>
+      <p class="fade-in-text">
+        In the qualifying round of the web design competition, Teams will come
+        up with ideas and base them on the front-end platform; Each Team will
+        need to design the main interface and subpages inside, focusing on
+        interface design without requiring functional development. Evaluation
+        criteria include aesthetics, layout, creativity, consistency, and
+        presentation skills.
+        <br />In particular, the organizers hope to see unique and creative
+        ideas expressed through each design, along with the harmonious use of
+        colors, fonts, and images. <br />This contest is not only an opportunity
+        for you to show off your design talent but also an opportunity to learn,
+        interact and challenge yourself in a professional environment. Wishing
+        the Teams a productive time and success in the competition! <br />Number
+        of members: 3 to 5 students/Team
+      </p>
     </section>
     <div class="container">
-        <h2 class="text-center mb-4">Competition Timeline</h2>
+      <h2 class="text-center mb-4">Competition Timeline</h2>
       <div class="timeline">
         <div class="timeline-item" data-year="1" style="color: #f59b00">
           <div class="timeline-content">
@@ -49,7 +66,7 @@
             </p>
           </div>
         </div>
-        <div class="timeline-item" >
+        <div class="timeline-item">
           <div class="timeline-content">
             <h4 class="fade-in-text">Qualifying Round</h4>
             <p class="fade-in-text"><small>May 19 - June 14, 2024</small></p>
@@ -70,15 +87,15 @@
           </div>
         </div>
         <div class="timeline-item">
-            <div class="timeline-content">
-                <h4 class="fade-in-text">Final Round</h4>
-                <p class="fade-in-text"><small>July 11 - July 12, 2024</small></p>
-                <p class="fade-in-text">
-                  The ultimate challenge where finalists compete to win the title at
-                  InnoCode Camp 2024.
-                </p>
-            </div>
+          <div class="timeline-content">
+            <h4 class="fade-in-text">Final Round</h4>
+            <p class="fade-in-text"><small>July 11 - July 12, 2024</small></p>
+            <p class="fade-in-text">
+              The ultimate challenge where finalists compete to win the title at
+              InnoCode Camp 2024.
+            </p>
           </div>
+        </div>
         <!-- More items here -->
       </div>
     </div>
@@ -102,9 +119,7 @@
             </p>
             <p>
               <i class="fab fa-facebook-square"></i>
-              <a
-                href="https://www.facebook.com/CF.FUDN"
-                class="text-white"
+              <a href="https://www.facebook.com/CF.FUDN" class="text-white"
                 >Facebook Fanpage CF</a
               >
             </p>
@@ -126,24 +141,27 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
-    const fadeInElements = document.querySelectorAll('.fade-in-text');
+      document.addEventListener("DOMContentLoaded", function () {
+        const fadeInElements = document.querySelectorAll(".fade-in-text");
 
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("visible");
                 observer.unobserve(entry.target);
-            }
-        });
-    }, {
-        threshold: 0.5 // Item needs to be at least 50% on screen to trigger
-    });
+              }
+            });
+          },
+          {
+            threshold: 0.5, // Item needs to be at least 50% on screen to trigger
+          }
+        );
 
-    fadeInElements.forEach(element => {
-        observer.observe(element);
-    });
-});
+        fadeInElements.forEach((element) => {
+          observer.observe(element);
+        });
+      });
     </script>
   </body>
 </html>
