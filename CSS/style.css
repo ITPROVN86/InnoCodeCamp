@@ -137,6 +137,7 @@ body {
     opacity: 0;
     transform: translateY(20px);
     transition: opacity 1.5s ease-out, transform 1.5s ease-out;
+    padding-bottom: 10px;
 }
 
 .fade-in-text.visible {
