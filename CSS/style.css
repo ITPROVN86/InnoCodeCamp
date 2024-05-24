@@ -1,33 +1,55 @@
+@media (max-width: 576px) {
+  .timeline-item {
+    width: 100%;
+    padding: 0px;
+  }
+  .timeline-content {
+    position: relative;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 6px;
+    background: white;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+  }
+}
+
 body {
-    /* Define a linear gradient background from pink to purple */
-    background: linear-gradient(to right, #ff758c 0%, #ff7eb3 50%, #be185d 75%, #881337 100%);
+  /* Define a linear gradient background from pink to purple */
+  background: linear-gradient(to right, #ff758c 0%, #ff7eb3 50%, #be185d 75%, #881337 100%);
 
-    height: 100vh; /* Full height */
-    margin: 0; /* Remove default margin */
+  height: 100vh;
+  /* Full height */
+  margin: 0;
+  /* Remove default margin */
 }
+
 .container {
-    background-color: #ffffff;
-    padding: 20px;
+  background-color: #ffffff;
+  padding: 20px;
 }
-.hero {
-    background: linear-gradient(
-        to bottom,
-        rgba(0, 0, 0, 0.5),
-        rgba(0, 0, 0, 0.5)
-      ),
-      url("../Images/background-camp.jpg") no-repeat center center;
-    background-size: cover;
-    color: white;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-  }
-  .section-padding {
-    padding: 40px 0;
-  }
 
+.hero {
+  background: linear-gradient(to bottom,
+      rgba(0, 0, 0, 0.5),
+      rgba(0, 0, 0, 0.5)),
+    url("../Images/background-camp.jpg") no-repeat center center;
+  background-size: cover;
+  color: white;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.section-padding {
+  padding: 40px 0;
+}
+
+
+
+
+@media (min-width: 576px) {
   .timeline {
     position: relative;
     width: 100%;
@@ -41,36 +63,61 @@ body {
     left: 50%;
     height: 100%;
     width: 6px;
-    background: linear-gradient(
-      to bottom,
-      #f59b00 33%,
-      #dd5145 33% 66%,
-      #7d4cab 66%
-    );
+    background: linear-gradient(to bottom,
+        #f59b00 33%,
+        #dd5145 33% 66%,
+        #7d4cab 66%);
     z-index: 0;
   }
-  .timeline-item:nth-child(odd) {
-    position: relative;
-    width: 50%;
-    padding: 20px 40px;
-    box-sizing: border-box;
-  }
-  .timeline-item:nth-child(even) {
-    position: relative;
-    width: 50%;
-    padding: 20px 0px;
-    box-sizing: border-box;
-  }
-  .timeline-item:nth-child(odd) .timeline-content {
-    left: 0;
-    text-align: right;
-  }
+    .timeline-item:nth-child(odd) {
+      position: relative;
+      width: 50%;
+      padding: 20px 40px;
+      box-sizing: border-box;
+    }
 
-  .timeline-item:nth-child(even) .timeline-content {
-    left: 100%;
-    text-align: left;
-  }
+    .timeline-item:nth-child(even) {
+      position: relative;
+      width: 50%;
+      padding: 20px 0px;
+      box-sizing: border-box;
+    }
 
+    .timeline-item:nth-child(odd) .timeline-content {
+      left: 0;
+      text-align: right;
+    }
+
+    .timeline-item:nth-child(even) .timeline-content {
+      left: 100%;
+      text-align: left;
+    }
+
+    .timeline-item:nth-child(odd)::before {
+      content: attr(data-year);
+      position: absolute;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      background-color: red;
+      color: white;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      line-height: 60px;
+      text-align: center;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+      z-index: 1;
+      border: 5px solid #ffffff;
+    }
+
+    .timeline-item:nth-child(odd)::before {
+      right: -60px;
+    }
+
+    .timeline-item:nth-child(even)::before {
+      right: 60px;
+    }
+  }
   .timeline-content {
     position: relative;
     padding: 20px;
@@ -79,30 +126,6 @@ body {
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
   }
 
-  .timeline-item:nth-child(odd)::before {
-    content: attr(data-year);
-    position: absolute;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    background-color: red;
-    color: white;
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    line-height: 60px;
-    text-align: center;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    z-index: 1;
-    border: 5px solid #ffffff;
-  }
-
-  .timeline-item:nth-child(odd)::before {
-    right: -60px;
-  }
-
-  .timeline-item:nth-child(even)::before {
-    right: 60px;
-  }
   footer .container {
     background-color: #343a40;
     color: #fff;
@@ -118,34 +141,39 @@ body {
   }
 
   .footer-icon {
-    width: 20px; /* or any size you want */
-    height: 20px; /* same as width for square icons */
+    width: 20px;
+    /* or any size you want */
+    height: 20px;
+    /* same as width for square icons */
   }
+
   @keyframes fadeIn {
     from {
-        opacity: 0;
-        transform: translatey(20px);
+      opacity: 0;
+      transform: translatey(20px);
     }
+
     to {
-        opacity: 1;
-        transform: translatey(0);
+      opacity: 1;
+      transform: translatey(0);
     }
-}
+  }
 
 
-.fade-in-text {
+  .fade-in-text {
     opacity: 0;
     transform: translateY(20px);
     transition: opacity 1.5s ease-out, transform 1.5s ease-out;
     padding-bottom: 10px;
-}
+    text-align: justify;
+  }
 
-.fade-in-text.visible {
+  .fade-in-text.visible {
     opacity: 1;
     transform: translateY(0);
-}
+  }
 
-.button-gradient {
+  .button-gradient {
     background: linear-gradient(to right, #ff758c, #c850c0);
     text-decoration: none;
     border: none;
@@ -160,6 +188,6 @@ body {
 
     /* Style cho hiệu ứng hover */
     &:hover {
-        background: linear-gradient(to right, #c850c0, #ff758c);
+      background: linear-gradient(to right, #c850c0, #ff758c);
     }
-}
+  }
