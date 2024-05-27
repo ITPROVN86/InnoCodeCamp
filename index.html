@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Trang chủ - Cuộc thi InnoCode Camp 2024</title>
+    <title>Home - Cuộc thi InnoCode Camp 2024</title>
     <meta
       property="og:description"
       content="InnoCode Camp 2024 is not just a competition; it's a journey to push the
@@ -31,7 +31,42 @@
         <a href="https://bom.so/Yaz1vI" class="button-gradient">Register Now</a>
       </div>
     </header>
-
+    <div class="container fade-in-text">
+      <div class="row text-center">
+        <div class="col-md-4">
+          <div id="countdown" class="stats-card">
+            <div class="time-segment">
+              <span id="days" class="neon-effect"></span>
+              <div class="small-text">Days</div>
+            </div>
+            <div class="time-segment">
+              <span id="hours" class="neon-effect"></span>
+              <div class="small-text">Hours</div>
+            </div>
+            <div class="time-segment">
+              <span id="minutes" class="neon-effect"></span>
+              <div class="small-text">Minutes</div>
+            </div>
+            <div class="time-segment">
+              <span id="seconds" class="neon-effect"></span>
+              <div class="small-text">Seconds</div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="stats-card p-4 mb-3 bg-light border rounded">
+            <h3 class="card-title">Total Members</h3>
+            <div class="stats-value" data-target="65">0</div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="stats-card p-4 mb-3 bg-light border rounded">
+            <h3 class="card-title">Total Teams</h3>
+            <div class="stats-value" data-target="15">0</div>
+          </div>
+        </div>
+      </div>
+    </div>
     <section class="container">
       <h2 class="text-center mb-4">About the Competition</h2>
       <p class="fade-in-text">
@@ -56,23 +91,42 @@
         the Teams a productive time and success in the competition! <br />Number
         of members: 3 to 5 students/Team
       </p>
+      <p class="fade-in-text">Here are some key details about this event:</p>
+      <h3 class="fade-in-text">1. Prizes and Subsequent Announcements</h3>
       <p class="fade-in-text">
-        Here are some key details about this event:</p>
-        <h3 class="fade-in-text">1. Prizes and Subsequent Announcements</h3>
-        <p class="fade-in-text">
-- <strong>Prizes:</strong> The InnoCodeCamp promises to offer attractive prizes for the winning teams, aiming to honor their efforts and achievements while also encouraging continuous creativity and improvement. Details about the prizes will be announced in subsequent communications from the organizers.<br/>
-- <strong>Subsequent Announcements</strong>: Updates regarding the prizes and related terms will be periodically released to ensure all participants are timely and fully informed.
-</p>
-<h3 class="fade-in-text">2. Project Submission and GitHub Pages</h3>
-<p class="fade-in-text">
-- <strong>Project Submission</strong>: All competition entries must be submitted through GitHub, a popular source code management platform, ensuring transparency and ease of assessment and review.<br/>
-- <strong>GitHub Pages</strong>: The use of GitHub Pages not only facilitates easy access and presentation of the projects but also allows participants to professionally showcase their solutions and engage with the community.
-</p>
-<h3 class="fade-in-text">3. Use of UI Frameworks</h3>
-<p class="fade-in-text">
-- <strong>Tool Support</strong>: Participants are encouraged to use modern User Interface (UI) frameworks such as Bootstrap, Angular Material, React or Vue.js to design their user interfaces. This not only improves the aesthetic appeal of the products but also enhances user experience.<br/>
-- <strong>Encouraging Creativity</strong>: The organizers encourage the creative use of these tools to maximize the functionality, performance, and user-friendliness of the applications.<br/>
-The InnoCodeCamp is an ideal platform for computer science students to explore and maximize their potential. The competition emphasizes the importance of programming and software development while also reinforcing skills in teamwork, problem-solving, and innovation.
+        - <strong>Prizes:</strong> The InnoCodeCamp promises to offer attractive
+        prizes for the winning teams, aiming to honor their efforts and
+        achievements while also encouraging continuous creativity and
+        improvement. Details about the prizes will be announced in subsequent
+        communications from the organizers.<br />
+        - <strong>Subsequent Announcements</strong>: Updates regarding the
+        prizes and related terms will be periodically released to ensure all
+        participants are timely and fully informed.
+      </p>
+      <h3 class="fade-in-text">2. Project Submission and GitHub Pages</h3>
+      <p class="fade-in-text">
+        - <strong>Project Submission</strong>: All competition entries must be
+        submitted through GitHub, a popular source code management platform,
+        ensuring transparency and ease of assessment and review.<br />
+        - <strong>GitHub Pages</strong>: The use of GitHub Pages not only
+        facilitates easy access and presentation of the projects but also allows
+        participants to professionally showcase their solutions and engage with
+        the community.
+      </p>
+      <h3 class="fade-in-text">3. Use of UI Frameworks</h3>
+      <p class="fade-in-text">
+        - <strong>Tool Support</strong>: Participants are encouraged to use
+        modern User Interface (UI) frameworks such as Bootstrap, Angular
+        Material, React or Vue.js to design their user interfaces. This not only
+        improves the aesthetic appeal of the products but also enhances user
+        experience.<br />
+        - <strong>Encouraging Creativity</strong>: The organizers encourage the
+        creative use of these tools to maximize the functionality, performance,
+        and user-friendliness of the applications.<br />
+        The InnoCodeCamp is an ideal platform for computer science students to
+        explore and maximize their potential. The competition emphasizes the
+        importance of programming and software development while also
+        reinforcing skills in teamwork, problem-solving, and innovation.
       </p>
     </section>
     <div class="container">
@@ -126,8 +180,8 @@ The InnoCodeCamp is an ideal platform for computer science students to explore a
       </div>
     </div>
 
-    <div class="text-center container"   style="padding-bottom: 5vh;">
-      <div style="padding: 20px;">
+    <div class="text-center container" style="padding-bottom: 5vh">
+      <div style="padding: 20px">
         <img src="./Images/slide1.png" width="100%" />
       </div>
       <p class="fade-in-text">
@@ -191,6 +245,53 @@ The InnoCodeCamp is an ideal platform for computer science students to explore a
           observer.observe(element);
         });
       });
+
+      document.addEventListener("DOMContentLoaded", () => {
+        const counters = document.querySelectorAll(".stats-value");
+        const speed = 200; // The lower the slower
+
+        counters.forEach((counter) => {
+          const animate = () => {
+            const value = +counter.getAttribute("data-target");
+            const data = +counter.innerText;
+
+            const time = value / speed;
+            if (data < value) {
+              counter.innerText = Math.ceil(data + time);
+              setTimeout(animate, 1);
+            } else {
+              counter.innerText = value;
+            }
+          };
+
+          animate();
+        });
+      });
+
+      function updateCountdown() {
+        const countdownDate = new Date("June 14, 2024 23:59:59").getTime();
+        const now = new Date().getTime();
+        const timeLeft = countdownDate - now;
+
+        const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+        const hours = Math.floor(
+          (timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+        );
+        const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+        document.getElementById("days").innerText = days;
+        document.getElementById("hours").innerText = hours;
+        document.getElementById("minutes").innerText = minutes;
+        document.getElementById("seconds").innerText = seconds;
+
+        if (timeLeft < 0) {
+          clearInterval(interval);
+          document.getElementById("countdown").innerHTML = "Event has started!";
+        }
+      }
+
+      let interval = setInterval(updateCountdown, 1000);
     </script>
   </body>
 </html>

@@ -3,6 +3,7 @@
     width: 100%;
     padding: 0px;
   }
+
   .timeline-content {
     position: relative;
     padding: 10px;
@@ -69,125 +70,183 @@ body {
         #7d4cab 66%);
     z-index: 0;
   }
-    .timeline-item:nth-child(odd) {
-      position: relative;
-      width: 50%;
-      padding: 20px 40px;
-      box-sizing: border-box;
-    }
 
-    .timeline-item:nth-child(even) {
-      position: relative;
-      width: 50%;
-      padding: 20px 0px;
-      box-sizing: border-box;
-    }
-
-    .timeline-item:nth-child(odd) .timeline-content {
-      left: 0;
-      text-align: right;
-    }
-
-    .timeline-item:nth-child(even) .timeline-content {
-      left: 100%;
-      text-align: left;
-    }
-
-    .timeline-item:nth-child(odd)::before {
-      content: attr(data-year);
-      position: absolute;
-      top: 50%;
-      transform: translate(-50%, -50%);
-      background-color: red;
-      color: white;
-      width: 60px;
-      height: 60px;
-      border-radius: 50%;
-      line-height: 60px;
-      text-align: center;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-      z-index: 1;
-      border: 5px solid #ffffff;
-    }
-
-    .timeline-item:nth-child(odd)::before {
-      right: -60px;
-    }
-
-    .timeline-item:nth-child(even)::before {
-      right: 60px;
-    }
-  }
-  .timeline-content {
+  .timeline-item:nth-child(odd) {
     position: relative;
-    padding: 20px;
-    border-radius: 6px;
-    background: white;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+    width: 50%;
+    padding: 20px 40px;
+    box-sizing: border-box;
   }
 
-  footer .container {
-    background-color: #343a40;
-    color: #fff;
+  .timeline-item:nth-child(even) {
+    position: relative;
+    width: 50%;
+    padding: 20px 0px;
+    box-sizing: border-box;
   }
 
-  footer a.text-white {
-    text-decoration: none;
-    color: #fff;
+  .timeline-item:nth-child(odd) .timeline-content {
+    left: 0;
+    text-align: right;
   }
 
-  footer a.text-white:hover {
-    text-decoration: underline;
+  .timeline-item:nth-child(even) .timeline-content {
+    left: 100%;
+    text-align: left;
   }
 
-  .footer-icon {
-    width: 20px;
-    /* or any size you want */
-    height: 20px;
-    /* same as width for square icons */
-  }
-
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-      transform: translatey(20px);
-    }
-
-    to {
-      opacity: 1;
-      transform: translatey(0);
-    }
-  }
-
-
-  .fade-in-text {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 1.5s ease-out, transform 1.5s ease-out;
-    padding-bottom: 10px;
-    text-align: justify;
-  }
-
-  .fade-in-text.visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-  .button-gradient {
-    background: linear-gradient(to right, #ff758c, #c850c0);
-    text-decoration: none;
-    border: none;
+  .timeline-item:nth-child(odd)::before {
+    content: attr(data-year);
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: red;
     color: white;
-    font-weight: bold;
-    padding: 20px 20px;
-    font-size: 19px;
-    cursor: pointer;
-    border-radius: 5px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    line-height: 60px;
     text-align: center;
-    transition: background 0.5s ease;
-
-    /* Style cho hiệu ứng hover */
-    &:hover {
-      background: linear-gradient(to right, #c850c0, #ff758c);
-    }
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    border: 5px solid #ffffff;
   }
+
+  .timeline-item:nth-child(odd)::before {
+    right: -60px;
+  }
+
+  .timeline-item:nth-child(even)::before {
+    right: 60px;
+  }
+}
+
+.timeline-content {
+  position: relative;
+  padding: 20px;
+  border-radius: 6px;
+  background: white;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+footer .container {
+  background-color: #343a40;
+  color: #fff;
+}
+
+footer a.text-white {
+  text-decoration: none;
+  color: #fff;
+}
+
+footer a.text-white:hover {
+  text-decoration: underline;
+}
+
+.footer-icon {
+  width: 20px;
+  /* or any size you want */
+  height: 20px;
+  /* same as width for square icons */
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translatey(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translatey(0);
+  }
+}
+
+
+.fade-in-text {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1.5s ease-out, transform 1.5s ease-out;
+  padding-bottom: 10px;
+  text-align: justify;
+}
+
+.fade-in-text.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.button-gradient {
+  background: linear-gradient(to right, #ff758c, #c850c0);
+  text-decoration: none;
+  border: none;
+  color: white;
+  font-weight: bold;
+  padding: 20px 20px;
+  font-size: 19px;
+  cursor: pointer;
+  border-radius: 5px;
+  text-align: center;
+  transition: background 0.5s ease;
+
+  /* Style cho hiệu ứng hover */
+  &:hover {
+    background: linear-gradient(to right, #c850c0, #ff758c);
+  }
+}
+
+.stats-card {
+  color: #fff; /* White text for better readability on dark background */
+  background-image: linear-gradient(to right top, #5d0245, #c850c0); /* Gradient from pink to purple */
+  padding: 20px;
+  height: 100%;
+  border-radius: 15px!important; /* Rounded corners */
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* Subtle shadow for depth */
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Smooth transitions for interactive effects */
+}
+
+.stats-card:hover {
+  transform: translateY(-5px); /* Lift the card slightly on hover */
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2); /* More pronounced shadow on hover */
+}
+
+.stats-value {
+  font-size: 36px; /* Larger font size for statistics values */
+  font-weight: bold; /* Bold font for emphasis */
+}
+.countdown-container {
+  text-align: center;
+  color: #c850c0; /* White text */
+}
+
+#countdown {
+  display: flex;
+  justify-content: center;
+}
+.neon-effect {
+  font-size: 20pt;
+  color: #fff; /* Màu trắng cho chữ */
+  text-shadow:
+      0 0 5px #ff00ff,   /* Lớp mờ màu hồng */
+      0 0 10px #ff00ff,  /* Lớp mờ màu hồng mạnh hơn */
+      0 0 20px #ff00ff,  /* Lớp mờ màu hồng cực mạnh */
+      0 0 30px #ff00ff,  /* Lan tỏa rộng hơn */
+      0 0 40px #ff1493,  /* Đổi màu sắc cho hiệu ứng */
+      0 0 70px #ff1493,
+      0 0 80px #ff1493,
+      0 0 100px #ff1493;
+}
+.time-segment{
+  padding: 2%;
+}
+.time-segment span {
+  font-size: 40px;
+  font-weight: bold;
+  display: block; /* Cung cấp khối riêng để dễ định dạng */
+  margin-bottom: 10px;
+}
+
+.time-segment .small-text {
+  font-size: 14pt;
+  font-weight: bold;
+}
