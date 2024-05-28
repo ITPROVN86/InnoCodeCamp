@@ -1,4 +1,8 @@
 @media (max-width: 576px) {
+  .mobile {
+    display: none;
+  }
+
   .timeline-item {
     width: 100%;
     padding: 0px;
@@ -38,6 +42,7 @@ body {
   color: white;
   height: 100vh;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
@@ -196,57 +201,110 @@ footer a.text-white:hover {
 }
 
 .stats-card {
-  color: #fff; /* White text for better readability on dark background */
-  background-image: linear-gradient(to right top, #5d0245, #c850c0); /* Gradient from pink to purple */
+  color: #fff;
+  /* White text for better readability on dark background */
+  background-image: linear-gradient(to right top, #5d0245, #c850c0);
+  /* Gradient from pink to purple */
   padding: 20px;
   height: 100%;
-  border-radius: 15px!important; /* Rounded corners */
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* Subtle shadow for depth */
-  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Smooth transitions for interactive effects */
+  border-radius: 15px !important;
+  /* Rounded corners */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  /* Subtle shadow for depth */
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  /* Smooth transitions for interactive effects */
 }
 
 .stats-card:hover {
-  transform: translateY(-5px); /* Lift the card slightly on hover */
-  box-shadow: 0 10px 20px rgba(0,0,0,0.2); /* More pronounced shadow on hover */
+  transform: translateY(-5px);
+  /* Lift the card slightly on hover */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  /* More pronounced shadow on hover */
 }
 
 .stats-value {
-  font-size: 36px; /* Larger font size for statistics values */
-  font-weight: bold; /* Bold font for emphasis */
+  font-size: 36px;
+  /* Larger font size for statistics values */
+  font-weight: bold;
+  /* Bold font for emphasis */
 }
+
 .countdown-container {
   text-align: center;
-  color: #c850c0; /* White text */
+  color: #c850c0;
+  /* White text */
 }
 
 #countdown {
   display: flex;
   justify-content: center;
 }
+
 .neon-effect {
   font-size: 20pt;
-  color: #fff; /* Màu trắng cho chữ */
+  color: #fff;
+  /* Màu trắng cho chữ */
   text-shadow:
-      0 0 5px #ff00ff,   /* Lớp mờ màu hồng */
-      0 0 10px #ff00ff,  /* Lớp mờ màu hồng mạnh hơn */
-      0 0 20px #ff00ff,  /* Lớp mờ màu hồng cực mạnh */
-      0 0 30px #ff00ff,  /* Lan tỏa rộng hơn */
-      0 0 40px #ff1493,  /* Đổi màu sắc cho hiệu ứng */
-      0 0 70px #ff1493,
-      0 0 80px #ff1493,
-      0 0 100px #ff1493;
+    0 0 5px #ff00ff,
+    /* Lớp mờ màu hồng */
+    0 0 10px #ff00ff,
+    /* Lớp mờ màu hồng mạnh hơn */
+    0 0 20px #ff00ff,
+    /* Lớp mờ màu hồng cực mạnh */
+    0 0 30px #ff00ff,
+    /* Lan tỏa rộng hơn */
+    0 0 40px #ff1493,
+    /* Đổi màu sắc cho hiệu ứng */
+    0 0 70px #ff1493,
+    0 0 80px #ff1493,
+    0 0 100px #ff1493;
 }
-.time-segment{
+
+.time-segment {
   padding: 2%;
 }
+
 .time-segment span {
   font-size: 40px;
   font-weight: bold;
-  display: block; /* Cung cấp khối riêng để dễ định dạng */
+  display: block;
+  /* Cung cấp khối riêng để dễ định dạng */
   margin-bottom: 10px;
 }
 
 .time-segment .small-text {
   font-size: 14pt;
   font-weight: bold;
+}
+
+#backToTopButton {
+  display: none;
+  /* Ẩn nút khi không cần thiết */
+  position: fixed;
+  /* Định vị cố định trên trang */
+  bottom: 20px;
+  /* Khoảng cách từ dưới cùng của trang */
+  right: 30px;
+  /* Khoảng cách từ phải của trang */
+  z-index: 99;
+  /* Đảm bảo nút không bị các phần tử khác che khuất */
+  border: none;
+  /* Loại bỏ viền */
+  outline: none;
+  /* Loại bỏ đường viền khi focus */
+
+  color: white;
+  /* Màu chữ */
+  cursor: pointer;
+  /* Con trỏ chuột dạng pointer */
+  background-color: #e206ff;
+  border-radius: 50%;
+  /* Bo góc */
+  font-size: 18px;
+  /* Cỡ chữ */
+}
+
+#backToTopButton:hover {
+  background-color: #ec59ff;
+  /* Thay đổi màu khi hover */
 }

@@ -25,48 +25,59 @@
   </head>
   <body>
     <header class="hero">
-      <div>
-        <h1 class="fade-in-text">InnoCode Camp 2024</h1>
-        <p class="fade-in-text">Unlock Your Potential, Break the Limits!</p>
-        <a href="https://bom.so/Yaz1vI" class="button-gradient">Register Now</a>
+      <div class="container" style="background-color: inherit">
+        <div class="row">
+          <div class="col-lg-12">
+            <h1 class="fade-in-text text-center">InnoCode Camp 2024</h1>
+            <p class="fade-in-text text-center">Unlock Your Potential, Break the Limits!</p>
+            <a href="https://bom.so/Yaz1vI" class="button-gradient"
+              >Register Now</a
+            >
+          </div>
+        </div>
+      </div>
+      <div class="container fade-in-text mobile" style="background-color: inherit">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="row text-center">
+              <div class="col-md-4">
+                <div id="countdown" class="stats-card">
+                  <div class="time-segment">
+                    <span id="days" class="neon-effect"></span>
+                    <div class="small-text">Days</div>
+                  </div>
+                  <div class="time-segment">
+                    <span id="hours" class="neon-effect"></span>
+                    <div class="small-text">Hours</div>
+                  </div>
+                  <div class="time-segment">
+                    <span id="minutes" class="neon-effect"></span>
+                    <div class="small-text">Minutes</div>
+                  </div>
+                  <div class="time-segment">
+                    <span id="seconds" class="neon-effect"></span>
+                    <div class="small-text">Seconds</div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="stats-card p-4 mb-3 bg-light border rounded">
+                  <h3 class="card-title">Total Members</h3>
+                  <div class="stats-value" data-target="75">0</div>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="stats-card p-4 mb-3 bg-light border rounded">
+                  <h3 class="card-title">Total Teams</h3>
+                  <div class="stats-value" data-target="17">0</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </header>
-    <div class="container fade-in-text">
-      <div class="row text-center">
-        <div class="col-md-4">
-          <div id="countdown" class="stats-card">
-            <div class="time-segment">
-              <span id="days" class="neon-effect"></span>
-              <div class="small-text">Days</div>
-            </div>
-            <div class="time-segment">
-              <span id="hours" class="neon-effect"></span>
-              <div class="small-text">Hours</div>
-            </div>
-            <div class="time-segment">
-              <span id="minutes" class="neon-effect"></span>
-              <div class="small-text">Minutes</div>
-            </div>
-            <div class="time-segment">
-              <span id="seconds" class="neon-effect"></span>
-              <div class="small-text">Seconds</div>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="stats-card p-4 mb-3 bg-light border rounded">
-            <h3 class="card-title">Total Members</h3>
-            <div class="stats-value" data-target="65">0</div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="stats-card p-4 mb-3 bg-light border rounded">
-            <h3 class="card-title">Total Teams</h3>
-            <div class="stats-value" data-target="15">0</div>
-          </div>
-        </div>
-      </div>
-    </div>
+
     <section class="container">
       <h2 class="text-center mb-4">About the Competition</h2>
       <p class="fade-in-text">
@@ -221,7 +232,7 @@
         </div>
       </div>
     </footer>
-
+    <button id="backToTopButton" class="btn btn-danger" title="Go to top">↑</button>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script>
       document.addEventListener("DOMContentLoaded", function () {
@@ -292,6 +303,53 @@
       }
 
       let interval = setInterval(updateCountdown, 1000);
+
+      // Khi người dùng cuộn xuống 20px từ đầu trang, hiển thị nút
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        document.getElementById("backToTopButton").style.display = "block";
+    } else {
+        document.getElementById("backToTopButton").style.display = "none";
+    }
+}
+
+// Khi người dùng nhấp vào nút, cuộn lên đầu trang
+document.getElementById("backToTopButton").onclick = function() {
+  smoothScrollToTop(500); // 500 là thời gian cuộn tính bằng milliseconds
+    document.body.scrollTop = 0; // For Safari
+    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+}
+
+// Hàm thực hiện cuộn mượt
+function smoothScrollToTop(duration) {
+    const start = document.documentElement.scrollTop || document.body.scrollTop;
+    const change = -start; // Độ thay đổi cần thiết để trở về đầu trang
+    const increment = 20; // Khoảng thời gian tính bằng milliseconds cho mỗi bước cuộn
+    let currentTime = 0; // Biến đếm thời gian hiện tại trong quá trình cuộn
+
+    // Hàm animateScroll sẽ được gọi lặp lại cho đến khi hoàn thành cuộn
+    const animateScroll = function() {
+        currentTime += increment; // Cập nhật thời gian hiện tại
+        const val = Math.easeInOutQuad(currentTime, start, change, duration); // Tính vị trí mới dựa trên hàm easing
+        window.scrollTo(0, val); // Thực hiện cuộn đến vị trí mới
+        if (currentTime < duration) {
+            setTimeout(animateScroll, increment); // Tiếp tục cuộn nếu chưa kết thúc
+        }
+    };
+
+    animateScroll(); // Gọi hàm animateScroll để bắt đầu cuộn
+}
+
+// Hàm easing để tính toán vị trí cuộn dựa trên thời gian
+Math.easeInOutQuad = function(t, b, c, d) {
+    t /= d/2;
+    if (t < 1) return c/2*t*t + b;
+    t--;
+    return -c/2 * (t*(t-2) - 1) + b;
+};
+
     </script>
   </body>
 </html>
