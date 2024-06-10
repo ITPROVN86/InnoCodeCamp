@@ -308,3 +308,16 @@ footer a.text-white:hover {
   background-color: #ec59ff;
   /* Thay đổi màu khi hover */
 }
+.nav-link{
+  color:rgb(232, 232, 232);
+  font-size: 14pt;
+  font-weight: bold;
+ 
+}
+.nav-item{
+  padding: 0px 15px;
+  border-right: 1px solid rgb(232, 232, 232);
+}
+.nav-item:last-child{
+  border: 0px;
+}
