@@ -354,8 +354,31 @@ footer a.text-white:hover {
   box-sizing: border-box;
 }
 #committees h2{
-  color: red;
+  color: rgb(199, 0, 0);
 }
-.committee img{
+.committee h3{
+  color: rgb(255, 0, 0);
+}
+.committee img {
   width: 100%;
+  height: auto;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.committee img:active {
+  transform: scale(1.2);
+}
+.committee {
+  border: 1px solid #ddd;
+  padding: 10px;
+  border-radius: 10px;
+  box-sizing: border-box;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+}
+
+.committee:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
