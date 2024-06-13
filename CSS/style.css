@@ -59,6 +59,9 @@ body {
 
 
 @media (min-width: 576px) {
+  .committee {
+    width: calc(50% - 20px);
+  }
   .timeline {
     position: relative;
     width: 100%;
