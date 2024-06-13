@@ -353,7 +353,6 @@ footer a.text-white:hover {
   border: 1px solid orange;
   padding: 10px;
   border-radius: 5px;
-  width: calc(50% - 20px);
   box-sizing: border-box;
 }
 #committees h2{
