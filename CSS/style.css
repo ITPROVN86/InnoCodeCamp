@@ -336,3 +336,26 @@ footer a.text-white:hover {
 .prize{
   font-size: 1.5em
 }
+#committees {
+  padding: 20px;
+}
+
+.committee-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.committee {
+  border: 1px solid orange;
+  padding: 10px;
+  border-radius: 5px;
+  width: calc(50% - 20px);
+  box-sizing: border-box;
+}
+#committees h2{
+  color: red;
+}
+.committee img{
+  width: 100%;
+}
