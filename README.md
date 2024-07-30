@@ -27,10 +27,29 @@ Instructions on how to use your project.
 
 Here is a list of tasks that need to be completed:
 
-- [x] Task 1: Description of the first task
-- [ ] Task 2: Description of the second task
-- [ ] Task 3: Description of the third task
-- [ ] Task 4: Description of the fourth task
+- [x] Set up project repository
+- [x] Implement initial project structure
+- [ ] Create user authentication module
+- [ ] Design database schema
+- [ ] Implement CRUD operations for main entities
+- [ ] Write unit tests for all modules
+- [ ] Create user interface for main features
+- [ ] Add documentation for API endpoints
+- [ ] Optimize performance for high traffic
+- [ ] Deploy project to production environment
+
+| Task ID | Description                             | Status   |
+|---------|-----------------------------------------|----------|
+| 1       | Set up project repository               | Completed|
+| 2       | Implement initial project structure     | Completed|
+| 3       | Create user authentication module       | Pending  |
+| 4       | Design database schema                  | Pending  |
+| 5       | Implement CRUD operations for main entities | Pending  |
+| 6       | Write unit tests for all modules        | Pending  |
+| 7       | Create user interface for main features | Pending  |
+| 8       | Add documentation for API endpoints     | Pending  |
+| 9       | Optimize performance for high traffic   | Pending  |
+| 10      | Deploy project to production environment| Pending  |
 
 ## Contributing
 
