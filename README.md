@@ -51,6 +51,34 @@ Here is a list of tasks that need to be completed:
 | 9       | Optimize performance for high traffic   | Pending  |
 | 10      | Deploy project to production environment| Pending  |
 
+```javascript
+import React, { useState } from 'react';
+
+function TodoForm({ addTodo }) {
+  const [value, setValue] = useState('');
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (!value) return;
+    addTodo(value);
+    setValue('');
+  };
+
+  return (
+    <form onSubmit={handleSubmit}>
+      <input
+        type="text"
+        value={value}
+        onChange={(e) => setValue(e.target.value)}
+        placeholder="Add a new todo"
+      />
+      <button type="submit">Add</button>
+    </form>
+  );
+}
+
+export default TodoForm;
+
 ## Contributing
 
 Guidelines for contributing to the project.
