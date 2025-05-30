@@ -19,6 +19,17 @@
   .committee{
     width: 100%;
   }
+
+  .horizontal-timeline {
+  display: flex;
+  flex-direction: column; /* Dọc */
+  align-items: flex-start;
+  position: relative;
+  margin: 40px auto;
+  max-width: 600px;
+  z-index: 1;
+}
+
 }
 
 body {
@@ -40,7 +51,7 @@ body {
   background: linear-gradient(to bottom,
       rgba(0, 0, 0, 0.5),
       rgba(0, 0, 0, 0.5)),
-    url("../Images/background-camp.jpg") no-repeat center center;
+    url("../Images/bg-camp-2025.jpg") no-repeat center center;
   background-size: cover;
   color: white;
   height: 100vh;
@@ -62,7 +73,7 @@ body {
   .committee {
     width: calc(50% - 20px);
   }
-  .timeline {
+  /* .timeline {
     position: relative;
     width: 100%;
     padding: 50px 0;
@@ -129,16 +140,16 @@ body {
 
   .timeline-item:nth-child(even)::before {
     right: 60px;
-  }
+  } */
 }
-
+/* 
 .timeline-content {
   position: relative;
   padding: 20px;
   border-radius: 6px;
   background: white;
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
-}
+} */
 
 footer .container {
   background-color: #343a40;
@@ -209,13 +220,13 @@ footer a.text-white:hover {
 .stats-card {
   color: #fff;
   /* White text for better readability on dark background */
-  background-image: linear-gradient(to right top, #5d0245, #c850c0);
+  /* background-image: linear-gradient(to right top, #5d0245, #c850c0); */
   /* Gradient from pink to purple */
   padding: 20px;
   height: 100%;
   border-radius: 15px !important;
   /* Rounded corners */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
   /* Subtle shadow for depth */
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
   /* Smooth transitions for interactive effects */
@@ -387,3 +398,168 @@ footer a.text-white:hover {
 .committee:hover {
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
+
+.photo-album {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.album-thumb {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.album-thumb:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+}
+img.img-fluid:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.timeline-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  position: relative;
+  margin: 40px auto;
+  max-width: 1000px;
+}
+
+.timeline-container::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 20px; /* chấm = 40px -> nửa = 20px */
+  right: 20px;
+  height: 4px;
+  background: #ff4d4f;
+  z-index: -1;
+}
+
+.timeline-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  animation: fadeInUp 0.6s ease forwards;
+  opacity: 0;
+}
+
+.timeline-step .circle {
+  background-color: #ff4d4f;
+  color: #fff;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 10px;
+  z-index: 1;
+}
+
+.timeline-step .card {
+  background: #fff;
+  border-radius: 8px;
+  padding: 10px 15px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  min-width: 150px;
+  text-align: center;
+}
+
+@keyframes fadeInUp {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+.horizontal-timeline {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  position: relative;
+  margin: 40px auto;
+  max-width: 1000px;
+  z-index: 1;
+}
+
+.horizontal-timeline::before {
+  content: '';
+  position: absolute;
+  top: 20px; /* center của circle */
+  left: 20px; /* circle rộng 40px, half = 20px */
+  right: 20px;
+  height: 4px;
+  background: #ff4d4f;
+  z-index: 0;
+}
+
+.horizontal-timeline .timeline-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  z-index: 1; /* nằm trên vạch nối */
+  width: 100%; /* Chiều rộng cố định cho mỗi bước */
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+.horizontal-timeline .timeline-step .circle {
+  background-color: #ff4d4f;
+  color: #fff;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.horizontal-timeline .timeline-step .card {
+  background: #fff;
+  border-radius: 8px;
+  padding: 10px 15px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  min-width: 150px;
+  text-align: center;
+}
+.horizontal-timeline::before {
+  background: #ff4d4f !important;
+  height: 4px !important;
+}
+/* Container cha cần position: relative để con .container absolute */
+.hero-section {
+  position: relative;
+}
+
+/* Countdown block đè lên backdrop */
+.container.fade-in-text.mobile {
+  position: absolute;
+  bottom: 20px; /* căn dưới */
+  left: 50%; /* căn giữa ngang */
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.5); /* nền mờ */
+  color: #fff;
+  border-radius: 8px;
+  padding: 10px 20px;
+  z-index: 2;
+  width: 90%;
+}
+
+/* Chỉnh text và icon cho đẹp */
+.stats-card {
+  background: transparent; /* nền trong suốt */
+  border: none;
+  color: #fff;
+  padding: 10px;
+}
+
