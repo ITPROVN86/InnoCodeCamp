@@ -16,20 +16,35 @@
     background: white;
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
   }
-  .committee{
+
+  .committee {
     width: 100%;
   }
 
   .horizontal-timeline {
-  display: flex;
-  flex-direction: column; /* Dọc */
-  align-items: flex-start;
-  position: relative;
-  margin: 40px auto;
-  max-width: 600px;
-  z-index: 1;
-}
-
+    display: flex;
+    flex-direction: column;
+    /* Dọc */
+    align-items: flex-start;
+    position: relative;
+    margin: 40px auto;
+    max-width: 600px;
+    z-index: 1;
+  }
+  .hero {
+    background: linear-gradient(to bottom,
+        rgba(0, 0, 0, 0.4),
+        rgba(0, 0, 0, 0.4)),
+      url("../Images/bg-camp-2025.jpg") no-repeat;
+    background-size: cover;
+    padding: 40px 20px; /* Thêm padding để tránh text sát viền */
+    min-height: 260px!important; /* Chiều cao tự động, không 100vh */
+    height: 260px!important;
+  }
+  
+  .hero h1, .hero p {
+    font-size: 1rem; /* Giảm size text để dễ đọc */
+  }
 }
 
 body {
@@ -61,7 +76,6 @@ body {
   justify-content: center;
   text-align: center;
 }
-
 .section-padding {
   padding: 40px 0;
 }
@@ -73,6 +87,7 @@ body {
   .committee {
     width: calc(50% - 20px);
   }
+
   /* .timeline {
     position: relative;
     width: 100%;
@@ -142,6 +157,7 @@ body {
     right: 60px;
   } */
 }
+
 /* 
 .timeline-content {
   position: relative;
@@ -319,40 +335,62 @@ footer a.text-white:hover {
   /* Bo góc */
   font-size: 18px;
   /* Cỡ chữ */
+  width: 40px;
+  ;
 }
 
 #backToTopButton:hover {
   background-color: #ec59ff;
   /* Thay đổi màu khi hover */
 }
-.nav-link{
-  color:rgb(232, 232, 232);
+
+.nav-link {
+  color: rgb(232, 232, 232);
   font-size: 14pt;
   font-weight: bold;
- 
+
 }
-.nav-item{
+
+.nav-item {
   padding: 0px 15px;
   border-right: 1px solid rgb(232, 232, 232);
 }
-.nav-item:last-child{
+
+.nav-item:last-child {
   border: 0px;
 }
+
 @keyframes color-change {
-  0% { color: red; }
-  25% { color: blue; }
-  50% { color: green; }
-  75% { color: orange; }
-  100% { color: red; }
+  0% {
+    color: red;
+  }
+
+  25% {
+    color: blue;
+  }
+
+  50% {
+    color: green;
+  }
+
+  75% {
+    color: orange;
+  }
+
+  100% {
+    color: red;
+  }
 }
 
 .color-changing-text {
   font-weight: bold;
   animation: color-change 3s infinite;
 }
-.prize{
+
+.prize {
   font-size: 1.5em
 }
+
 #committees {
   padding: 20px;
 }
@@ -369,12 +407,15 @@ footer a.text-white:hover {
   border-radius: 5px;
   box-sizing: border-box;
 }
-#committees h2{
+
+#committees h2 {
   color: rgb(199, 0, 0);
 }
-.committee h3{
+
+.committee h3 {
   color: rgb(255, 0, 0);
 }
+
 .committee img {
   width: 100%;
   height: auto;
@@ -385,6 +426,7 @@ footer a.text-white:hover {
 .committee img:active {
   transform: scale(1.2);
 }
+
 .committee {
   border: 1px solid #ddd;
   padding: 10px;
@@ -417,12 +459,13 @@ footer a.text-white:hover {
 
 .album-thumb:hover {
   transform: scale(1.05);
-  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
 }
+
 img.img-fluid:hover {
   transform: scale(1.05);
   transition: transform 0.3s ease;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
 .timeline-container {
@@ -439,7 +482,8 @@ img.img-fluid:hover {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  left: 20px; /* chấm = 40px -> nửa = 20px */
+  left: 20px;
+  /* chấm = 40px -> nửa = 20px */
   right: 20px;
   height: 4px;
   background: #ff4d4f;
@@ -472,15 +516,23 @@ img.img-fluid:hover {
   background: #fff;
   border-radius: 8px;
   padding: 10px 15px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   min-width: 150px;
   text-align: center;
 }
 
 @keyframes fadeInUp {
-  0% { opacity: 0; transform: translateY(20px); }
-  100% { opacity: 1; transform: translateY(0); }
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
+
 .horizontal-timeline {
   display: flex;
   justify-content: space-between;
@@ -494,8 +546,10 @@ img.img-fluid:hover {
 .horizontal-timeline::before {
   content: '';
   position: absolute;
-  top: 20px; /* center của circle */
-  left: 20px; /* circle rộng 40px, half = 20px */
+  top: 20px;
+  /* center của circle */
+  left: 20px;
+  /* circle rộng 40px, half = 20px */
   right: 20px;
   height: 4px;
   background: #ff4d4f;
@@ -507,8 +561,10 @@ img.img-fluid:hover {
   flex-direction: column;
   align-items: center;
   position: relative;
-  z-index: 1; /* nằm trên vạch nối */
-  width: 100%; /* Chiều rộng cố định cho mỗi bước */
+  z-index: 1;
+  /* nằm trên vạch nối */
+  width: 100%;
+  /* Chiều rộng cố định cho mỗi bước */
   animation: fadeInUp 0.6s ease forwards;
 }
 
@@ -528,14 +584,16 @@ img.img-fluid:hover {
   background: #fff;
   border-radius: 8px;
   padding: 10px 15px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   min-width: 150px;
   text-align: center;
 }
+
 .horizontal-timeline::before {
   background: #ff4d4f !important;
   height: 4px !important;
 }
+
 /* Container cha cần position: relative để con .container absolute */
 .hero-section {
   position: relative;
@@ -544,10 +602,13 @@ img.img-fluid:hover {
 /* Countdown block đè lên backdrop */
 .container.fade-in-text.mobile {
   position: absolute;
-  bottom: 20px; /* căn dưới */
-  left: 50%; /* căn giữa ngang */
+  bottom: 20px;
+  /* căn dưới */
+  left: 50%;
+  /* căn giữa ngang */
   transform: translateX(-50%);
-  background: rgba(0, 0, 0, 0.5); /* nền mờ */
+  background: rgba(0, 0, 0, 0.5);
+  /* nền mờ */
   color: #fff;
   border-radius: 8px;
   padding: 10px 20px;
@@ -557,9 +618,9 @@ img.img-fluid:hover {
 
 /* Chỉnh text và icon cho đẹp */
 .stats-card {
-  background: transparent; /* nền trong suốt */
+  background: transparent;
+  /* nền trong suốt */
   border: none;
   color: #fff;
   padding: 10px;
 }
-
